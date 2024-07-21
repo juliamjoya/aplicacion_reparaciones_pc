@@ -4,8 +4,6 @@
 <head>
     <!-- Plantilla links CSS -->
     <?php require_once("../config/links_css.php");?>
-
-    <title>App Reparaciones PC</title>
 </head>
 
 <body>
