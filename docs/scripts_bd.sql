@@ -22,6 +22,18 @@ CREATE TABLE registro_operador (
     fecha_revision TIMESTAMP
 );
 
+-- Creacion tabla registro_operador
+CREATE TABLE usuarios (
+    id int,
+    nombre_usuario varchar(200),
+    nombres varchar(200),
+    apellidos varchar(200),
+    email varchar(200),
+    contrasena varchar(200),
+    id_role int,
+    fecha_revision TIMESTAMP
+);
+
 -- Datos de prueba tabla registro_recepcion
 INSERT INTO `registro_recepcion`(`numero_recibido`, `estado_pc`, `marca_pc`, `nombre_cliente`, `telefono_cliente`, `codigo_operario`) VALUES ('001','Excelente estado','Ordenador marca Dell','Cliente: Sheldon Cooper','Telefono Cliente: 01800123456','Codigo Operario: CODOPERARIO # 111');
 INSERT INTO `registro_recepcion`(`numero_recibido`, `estado_pc`, `marca_pc`, `nombre_cliente`, `telefono_cliente`, `codigo_operario`) VALUES ('002','Bueno estado','Lenovo thinkpad','Leonard Hofstadter','123456','CODOPERARIO # 112');
