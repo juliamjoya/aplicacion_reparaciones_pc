@@ -1,0 +1,24 @@
+Ejecutar scripts SQL en MySQL XAMPP macos:
+1. Dar permisos de ejecucion al archivo:
+ > chmod -R 777 /Applications/XAMPP/htdocs/aplicacion_reparaciones_pc/docs/script_datos_prueba.sql
+2. Acceder al directorio de MySQL XAMPP:
+ > cd /Applications/XAMPP/xamppfiles/bin
+3. Conectarse a MySQL:
+ > ./mysql -u root -p
+4. Seleccionar la base de datos:
+ > USE app_reparaciones_pc;
+5. Ejecutar el script:
+ > source /Applications/XAMPP/htdocs/aplicacion_reparaciones_pc/docs/script_datos_prueba.sql
+6. Salir de MySQL:
+ > exit
+
+ Ejemplo ejecucion script SQL:
+ # Abre Terminal y navega al directorio del script
+cd /Applications/XAMPP/htdocs/aplicacion_reparaciones_pc/docs
+
+# Conéctate a MariaDB desde ese directorio
+/Applications/XAMPP/xamppfiles/bin/mysql -u root -p
+
+# Dentro del cliente de MariaDB
+USE app_reparaciones_pc;
+source script_datos_prueba.sql;
