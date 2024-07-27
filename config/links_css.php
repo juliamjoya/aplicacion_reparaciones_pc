@@ -13,4 +13,7 @@
 <link rel="icon" href="../config/img/favicon.png" type="image/x-icon">
 <link rel="shortcut icon" href="../config/img/favicon.png" type="image/x-icon">
 
+<!-- Estilo personalizado -->
+ <link rel="stylesheet" href="../config/css/style.css">
+
 <title>Reparaciones PC JJ</title>

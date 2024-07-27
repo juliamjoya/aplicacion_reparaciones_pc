@@ -9,23 +9,26 @@ switch ($_GET["op"]) {
         $usuario = $_POST['usuario'];
         $contrasena = $_POST['contrasena'];
         $resultado_iniciar_sesion = $sesion->inicio_sesion($usuario, $contrasena);
+        
         if (is_array($resultado_iniciar_sesion) == true && count($resultado_iniciar_sesion) > 0) {
-            foreach ($resultado_iniciar_sesion as $datos) {
-                $resultado_bd["id_usuario"] = $datos["id_usuario"];
-                $resultado_bd["nombre_usuario"] = $datos["nombre_usuario"];
-                $resultado_bd["nombres"] = $datos["nombres"];
-                $resultado_bd["apellidos"] = $datos["apellidos"];
-                $resultado_bd["email"] = $datos["email"];
-                $resultado_bd["id_role"] = $datos["id_role"];
-            }
-            echo json_encode($resultado_bd);
+            $resultado_bd = array(
+                "id_usuario" => $resultado_iniciar_sesion["id_usuario"],
+                "nombre_usuario" => $resultado_iniciar_sesion["nombre_usuario"],
+                "nombres" => $resultado_iniciar_sesion["nombres"],
+                "apellidos" => $resultado_iniciar_sesion["apellidos"],
+                "email" => $resultado_iniciar_sesion["email"],
+                "id_role" => $resultado_iniciar_sesion["id_role"],
+                "nombre_rol" => $resultado_iniciar_sesion["nombre_rol"]
+            );
             // Inicio de sesión exitoso
-            session_start();
-            $_SESSION['usuario'] = $resultado_iniciar_sesion;
-            header("Location: ../view/registro_operacion.php");
+            //session_start();
+            //$_SESSION['usuario'] = $resultado_iniciar_sesion;
+            
+            // Enviar respuesta exitosa en formato JSON
+            echo json_encode(array("status" => "success", "data" => $resultado_bd));
         } else {
-            // Inicio de sesión fallido
-            header("Location: ../view/inicio_sesion.php?error=1");
+            // Enviar respuesta de error en formato JSON
+            echo json_encode(array("status" => "error", "message" => "Nombre de usuario o contraseña incorrectos"));
         }
         break;
 }

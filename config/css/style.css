@@ -1,0 +1,10 @@
+/* imagen columna izquierda inicio sesion */
+.img-bkgrd-iniciar-sesion {
+    background-image: url(../img/fondo-inicio-sesion-01.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+footer {
+    position: relative;
+}

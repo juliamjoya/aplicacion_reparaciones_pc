@@ -10,11 +10,12 @@
     <!-- Plantilla cabecera -->
     <?php require_once("../config/app_cabecera.php");?>
 
-    <div class="container">
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="row mt-4 mb-4">
+            <div class="col img-bkgrd-iniciar-sesion"></div>
             <div class="col d-flex justify-content-center">
-                <div class="card" style="width: 50rem;">
-                    <img src="../config/img/logo_reparaciones_jj.png" class="card-img-top" alt="Registro Recepción" height="256">
+                <div class="card">
+                    <img src="../config/img/logo_reparaciones_jj.png" class="card-img-top" alt="Logo Reparaciones PC Julian Joya" height="150">
                     <div class="card-body">
                         <h3 class="card-title text-center">Inicio de Sesión</h3>
                         <form id="form_inicio_sesion" method="post">
